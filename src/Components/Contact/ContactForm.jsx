@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-// import emailjs from "emailjs-com";
 import emailjs from "@emailjs/browser";
+import Swal from "sweetalert2";
 
 const ContactForm = () => {
   const formRef = useRef();
@@ -20,30 +20,46 @@ const ContactForm = () => {
       .then(
         (result) => {
           console.log("Email sent:", result.text);
-          alert("Email sent successfully!");
+          Swal.fire({
+            title: "Success!",
+            text: "Email sent successfully!",
+            icon: "success",
+            confirmButtonText: "Cool",
+            background: "#333",
+            color: "#fff",
+            confirmButtonColor: "#4CAF50",
+          });
           setLoading(false);
           formRef.current.reset();
         },
         (error) => {
           console.log("Email failed:", error.text);
-          alert("Failed to send email. Try again.");
+          Swal.fire({
+            title: "Error!",
+            text: "Failed to send email. Try again.",
+            icon: "error",
+            confirmButtonText: "Okay",
+            background: "#333",
+            color: "#fff",
+            confirmButtonColor: "#FF0000",
+          });
           setLoading(false);
         }
       );
   };
 
   return (
-    <div className="container mx-auto px-6 py-12">
+    <div className="container mx-auto px-6 py-12 max-w-4xl">
       {/* Page Heading */}
       <h2 className="text-4xl font-bold text-center text-white mb-6">
-        Contact Me
+        📩 Get in Touch
       </h2>
       <p className="text-center text-lg text-gray-300 mb-8">
-        Have a question or want to work together? Drop me a message!
+        Feel free to reach out. I'll get back to you as soon as possible!
       </p>
 
       {/* Contact Form */}
-      <div className="max-w-lg mx-auto bg-gray-800 p-8 rounded-lg shadow-lg">
+      <div className="bg-gray-900 p-8 rounded-lg shadow-lg">
         <form ref={formRef} onSubmit={sendEmail} className="space-y-6">
           {/* User Email */}
           <div>
@@ -55,7 +71,7 @@ const ContactForm = () => {
               name="user_email"
               required
               placeholder="Enter your email"
-              className="w-full px-4 py-3 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 text-white bg-gray-800 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
@@ -69,7 +85,7 @@ const ContactForm = () => {
               required
               placeholder="Enter your message"
               rows="5"
-              className="w-full px-4 py-3 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 text-white bg-gray-800 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             ></textarea>
           </div>
 
@@ -86,12 +102,17 @@ const ContactForm = () => {
 
       {/* Contact Information */}
       <div className="mt-12 text-center text-white">
-        <h3 className="text-2xl font-semibold mb-4">Other Ways to Connect</h3>
-        <p className="text-lg mb-2">📞 Phone: +880 1869943362</p>
-        <p className="text-lg mb-2">📧 Email: srabonshakhawat@gmail.com</p>
+        <h3 className="text-2xl font-semibold mb-4">📍 Address & Contact</h3>
+
+        {/* Address Section */}
+        <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <p className="text-lg mb-2">🏠 Tejgaon, Dhaka, Bangladesh</p>
+          <p className="text-lg mb-2">📞 Phone: +880 1869943362</p>
+          <p className="text-lg mb-2">📧 Email: srabonshakhawat@gmail.com</p>
+        </div>
 
         {/* Social Media Links */}
-        <div className="flex justify-center gap-6 mt-4">
+        <div className="flex justify-center gap-6 mt-6">
           <a
             href="https://github.com/shakayet"
             target="_blank"

@@ -13,7 +13,7 @@ const About = () => {
     <div className="relative min-h-screen">
 
       {/* Content Section - Ensures text is above particles */}
-      <div className="relative z-10 container mx-auto px-4 py-12 text-white">
+      <div className="relative z-30 container mx-auto px-4 py-12 text-white">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 animate__fadeIn animate__animated">
           
           {/* Left Section: Intro */}
