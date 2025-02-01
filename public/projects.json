@@ -1,0 +1,45 @@
+[
+    {
+      
+      "name": "Maxify Product Cart And Options - Shopify App",
+      "img": "https://github.com/samiulalimseam/pictures/blob/main/4.png?raw=true",
+      "techStack": "ReactJS, NodeJS, ExpressJS, MongoDB, Firebase, Rest Api, GraphQL, Mongoose",
+      "github": "#",
+      "live":"https://apps.shopify.com/maxify-product-cart-option",
+      "type": "All-FullStack",
+      
+        "detail": "Maxify - Product & Cart is the ultimate app for tailoring product options and variant selections to suit any scenario. Need to apply a gift-wrapping fee for expedited processing? With Maxify, it's a breeze! \n ● Limitless options in your products page \n● Create additional dropdown for your product \n ● Easy color swatches \n ● Apply gift wrapping fee \n● File upload on your product page"
+      
+      
+    },
+    {
+      
+      "name": "Save You Penny",
+      "img": "https://github.com/samiulalimseam/pictures/blob/main/1.png?raw=true",
+      "techStack": "ReactJS, NodeJS, ExpressJS, MongoDB, Firebase",
+      "github": "https://github.com/samiulalimseam/classified-market-client",
+      "live":"https://saveyou-29081.web.app/",
+      "type": "All-FullStack",
+      "detail": "● Marketplace to buy and sell products. Admin, Seller, and Buyer User Roles.\n        ● Firebase Authentication Implemented.\n        ● Tech Stack: HTML, CSS, Tailwind CSS, Daisy UI, ReactJS. ExpressJS, MongoDB, JWT, Vercel, Node.js"
+    },
+    {
+      
+      "name": "Educare",
+      "img": "https://github.com/samiulalimseam/pictures/blob/main/3.png?raw=true",
+      "techStack": "ReactJS, Firebase",
+      "github": "https://github.com/samiulalimseam/e-learning-client",
+      "live":"https://educare-4950e.web.app/",
+      "type": "All-Frontend",
+      "detail": "○ Functionality to sell Online Courses\n        ○ Authentication (Firebase) has been added for login, register, and premium access\n        ○ Tech Stack: HTML, CSS, BootStrap, ReactJS, Firebase, JSON"
+    },
+    {
+      
+      "name": "Globaldesk",
+      "img": "https://github.com/samiulalimseam/pictures/blob/main/2.png?raw=true",
+      "techStack": "ReactJS, NodeJS, ExpressJS, MongoDB, Firebase",
+      "github": "https://github.com/samiulalimseam/consultant-client",
+      "live":"https://globaldesk-5386b.web.app/",
+      "type": "All-FullStack",
+      "detail": "○ Show case consultancy services for immigration and help.\n        ○ Authentication (Firebase) has been added for login, register, and premium access.\n        ○ Tech Stack: HTML, CSS, TailwindCSS, ReactJS, ExpressJS, Vercel, Node.js, JSON"
+    }
+  ]
