@@ -8,8 +8,6 @@ import {
 } from "react-router-dom";
 import routes from './Routes/Routes.jsx';
 
-// Your other code...
-
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
