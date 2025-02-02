@@ -17,3 +17,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.glossy-card {
+  background-color: rgba(31, 41, 55, 0.3); /* Equivalent to bg-gray-800/30 */
+  backdrop-filter: blur(12px); /* Equivalent to backdrop-blur-lg */
+  padding: 1.5rem; /* Equivalent to p-6 */
+  border-radius: 0.5rem; /* Equivalent to rounded-lg */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Equivalent to shadow-lg */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Equivalent to transition */
+}
+
+.glossy-card:hover {
+  transform: scale(1.05); /* Equivalent to hover:scale-105 */
+  background-color: rgba(31, 41, 55, 0.8); /* Equivalent to hover:bg-gray-800/80 */
+}
