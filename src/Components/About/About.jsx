@@ -114,7 +114,7 @@ const About = () => {
         {/* Experience Section */}
         <section>
           <h2 className="text-4xl font-bold mb-8 border-b-2 pb-3 border-gray-700">Experience</h2>
-          <div className="bg-gray-800 p-6 rounded-lg shadow-lg transition hover:scale-105">
+          <div className="bg-gray-800/30 backdrop-blur-lg p-6 rounded-lg shadow-lg transition hover:scale-105 hover:bg-gray-800/80 mt-6">
             <h3 className="text-2xl font-semibold flex items-center gap-2">
               <BsFillBriefcaseFill /> President, Programming Club (Tejgaon College)
             </h3>
@@ -133,7 +133,7 @@ const About = () => {
             <h3 className="text-2xl font-semibold flex items-center gap-2">
               <SiTensorflow className="text-yellow-500" /> Research & Implementation
             </h3>
-            <p className="text-gray-300 mt-4">I conducted research on <span className="text-blue-400 font-semibold">"Employee Promotion Prediction"</span>, using supervised classification approaches.</p>
+            <p className="text-gray-300 mt-4">I conducted research on <a href="https://link.springer.com/chapter/10.1007/978-981-99-0550-8_14" target="blank"><span className="text-blue-400 font-semibold">"Employee Promotion Prediction"</span></a>, using supervised classification approaches.</p>
             <ul className="list-disc list-inside mt-4 text-gray-300">
               <li>Algorithm: <span className="text-green-400 font-semibold">Random Forest</span></li>
               <li>Dataset: <span className="text-blue-400 font-semibold">78,000 employee records</span></li>
