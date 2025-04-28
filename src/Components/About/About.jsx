@@ -1,7 +1,7 @@
 import React from "react";
 import { FaCode, FaDatabase, FaLaptopCode } from "react-icons/fa";
 import { BsFillBriefcaseFill, BsTrophy, BsMortarboardFill } from "react-icons/bs";
-import { SiMongodb, SiReact, SiNodedotjs, SiTailwindcss, SiExpress, SiFlask, SiCodeforces, SiCodechef, SiTensorflow, SiPytorch, SiScikitlearn} from "react-icons/si";
+import { SiMongodb, SiReact, SiNodedotjs, SiTailwindcss, SiExpress, SiFlask, SiCodeforces, SiCodechef, SiTensorflow, SiPytorch, SiScikitlearn, SiPostgresql} from "react-icons/si";
 import icpcLogo from "../../Assets/icpc.png";
 import ncpcLogo from "../../Assets/ncpc.png";
 
@@ -106,6 +106,7 @@ const About = () => {
               </h3>
               <ul className="list-disc list-inside mt-4 text-gray-300">
                 <li><SiMongodb className="inline text-green-400" /> MongoDB</li>
+                <li><SiPostgresql className="inline text-green-400" /> PostgreSQL</li>
               </ul>
             </div>
           </div>

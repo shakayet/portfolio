@@ -50,7 +50,7 @@ const Home = () => {
             {/* Resume Button */}
             <div className="mt-6">
               <a
-                href="https://drive.google.com/file/d/1gIyYBYoowfh8N6V1epb6K2neeNlvWbkY/view"
+                href="https://drive.google.com/file/d/1JypkYfKBt78XwOiESFG4AEBJfr6pjo8p/view"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-6 py-3 text-lg font-semibold text-white rounded-lg bg-gradient-to-r from-indigo-500 to-pink-500 shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300"
