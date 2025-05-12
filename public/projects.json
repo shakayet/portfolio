@@ -1,7 +1,7 @@
 [
   {
     "name": "Foodie Hub",
-    "img": "https://github.com/shakayet/foodie-hub/blob/main/restaurant-client/public/AdminAccess.png?raw=true",
+    "img": "https://github.com/shakayet/foodie-hub/blob/main/restaurant-client/public/cover.png?raw=true",
     "techStack": "ReactJS, NodeJS, ExpressJS, Firebase, MongoDB",
     "github": "https://github.com/shakayet/foodie-hub",
     "live": "https://fooodie-hub.netlify.app/",
