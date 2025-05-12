@@ -1,5 +1,14 @@
 [
   {
+    "name": "Foodie Hub",
+    "img": "https://github.com/shakayet/foodie-hub/blob/main/restaurant-client/public/AdminAccess.png?raw=true",
+    "techStack": "ReactJS, NodeJS, ExpressJS, Firebase, MongoDB",
+    "github": "https://github.com/shakayet/foodie-hub",
+    "live": "https://fooodie-hub.netlify.app/",
+    "type": "All-FullStack",
+    "detail": "● A full-stack restaurant web application with category-wise menus, live search, cart system, and admin panel. Built using React.js (frontend), Node.js & Express.js (backend), Firebase (authentication), and MongoDB (database). Features include WhatsApp-based order delivery and customer support, localStorage-based cart caching, and role-based admin access. Hosted on Netlify (frontend) and Render (backend)"
+  },
+  {
     "name": "Employee Promotion Prediction",
     "img": "https://github.com/shakayet/temporary-photo/blob/2be51e7dba737a2305f7128ecc63b8e92e6fc4e6/home2.png?raw=true",
     "techStack": "ReactJS, NodeJS, Firebase, Flask, Machine Learning",
