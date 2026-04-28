@@ -6,12 +6,22 @@ import { FaGithub } from 'react-icons/fa';
 const Projects: React.FC = () => {
   const projectList = [
     {
+      title: "AutoParts",
+      category: "Multi-Vendor Platform",
+      description: "A scalable backend for an auto-parts marketplace. Implemented dual-token JWT authentication and integrated AWS S3 and CloudFront for media.",
+      techStack: ["Node.js", "AWS S3", "CloudFront", "Socket.IO"],
+      github: "https://github.com/shakayet/AutoParts-E-commerce-Marketplace.git",
+      live: "https://jbay.shop/",
+      image: "/autoparts.png"
+    },
+    {
       title: "Schaefer-tutoring",
       category: "LMS Backend",
       description: "A production-ready backend for a real-time online learning platform. Implemented Socket.IO for live tutoring sessions and presence tracking.",
       techStack: ["Node.js", "Express", "MongoDB", "Socket.IO", "Stripe"],
       github: "https://github.com/shakayet",
-      live: "#"
+      live: "#",
+      image: "/schaefer-tutoring.png"
     },
     {
       title: "B2B MarketPlace",
@@ -19,15 +29,8 @@ const Projects: React.FC = () => {
       description: "A comprehensive backend for a B2B produce marketplace with credit systems. Integrated QuickBooks Online for syncing customers and invoices.",
       techStack: ["Node.js", "MongoDB", "QuickBooks API", "Firebase"],
       github: "https://github.com/shakayet",
-      live: "#"
-    },
-    {
-      title: "AutoParts",
-      category: "Multi-Vendor Platform",
-      description: "A scalable backend for an auto-parts marketplace. Implemented dual-token JWT authentication and integrated AWS S3 and CloudFront for media.",
-      techStack: ["Node.js", "AWS S3", "CloudFront", "Socket.IO"],
-      github: "https://github.com/shakayet/AutoParts-E-commerce-Marketplace.git",
-      live: "https://jbay.shop/"
+      live: "#",
+      image: "/b2b-marketplace.png"
     }
   ];
 
@@ -60,9 +63,19 @@ const Projects: React.FC = () => {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className={`lg:col-span-7 ${index % 2 !== 0 ? 'lg:order-2' : ''}`}>
                   <div className="relative w-full aspect-[16/10] bg-zinc-900 overflow-hidden border border-border group-hover:border-zinc-700 transition-colors duration-500">
-                    <div className="absolute inset-0 flex items-center justify-center opacity-10 group-hover:opacity-30 transition-opacity duration-700 group-hover:scale-105 ease-out">
-                      <span className="font-serif text-6xl md:text-8xl font-bold tracking-tighter text-foreground uppercase">{project.title.substring(0, 2)}</span>
-                    </div>
+                    {project.image ? (
+                      <div className="w-full h-full overflow-hidden">
+                        <img 
+                          src={project.image} 
+                          alt={project.title} 
+                          className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105 ease-out"
+                        />
+                      </div>
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center opacity-10 group-hover:opacity-30 transition-opacity duration-700 group-hover:scale-105 ease-out">
+                        <span className="font-serif text-6xl md:text-8xl font-bold tracking-tighter text-foreground uppercase">{project.title.substring(0, 2)}</span>
+                      </div>
+                    )}
                   </div>
                 </div>
                 
