@@ -19,8 +19,8 @@ const Projects: React.FC = () => {
       category: "LMS Backend",
       description: "A production-ready backend for a real-time online learning platform. Implemented Socket.IO for live tutoring sessions and presence tracking.",
       techStack: ["Node.js", "Express", "MongoDB", "Socket.IO", "Stripe"],
-      github: "https://github.com/shakayet",
-      live: "#",
+      github: "https://github.com/shakayet/LMS---online-learning-platform-.git",
+      live: "https://www.schaefer-tutoring.com/",
       image: "/schaefer-tutoring.png"
     },
     {
@@ -28,8 +28,8 @@ const Projects: React.FC = () => {
       category: "E-Commerce Architecture",
       description: "A comprehensive backend for a B2B produce marketplace with credit systems. Integrated QuickBooks Online for syncing customers and invoices.",
       techStack: ["Node.js", "MongoDB", "QuickBooks API", "Firebase"],
-      github: "https://github.com/shakayet",
-      live: "#",
+      github: "https://github.com/shakayet/B2B-Ecommerce.git",
+      live: "https://www.unifiedproduces.com/",
       image: "/b2b-marketplace.png"
     }
   ];
