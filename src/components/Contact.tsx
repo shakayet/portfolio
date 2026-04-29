@@ -6,11 +6,54 @@ import { Textarea } from './ui/textarea';
 
 const Contact: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  
+  // Form state
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({ ...prev, [id]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => setIsSubmitting(false), 1500); // Mock submission
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          // TODO: Replace with your Web3Forms access key
+          access_key: "YOUR_WEB3FORMS_ACCESS_KEY",
+          ...formData
+        }),
+      });
+
+      const result = await response.json();
+      
+      if (result.success) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' }); // Reset form
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -48,24 +91,35 @@ const Contact: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-3">
                   <label htmlFor="name" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Name</label>
-                  <Input id="name" required placeholder="John Doe" className="bg-transparent border-0 border-b border-border rounded-none px-0 focus-visible:ring-0 focus-visible:border-foreground transition-colors" />
+                  <Input id="name" value={formData.name} onChange={handleChange} required placeholder="John Doe" className="bg-transparent border-0 border-b border-border rounded-none px-0 focus-visible:ring-0 focus-visible:border-foreground transition-colors" />
                 </div>
                 <div className="space-y-3">
                   <label htmlFor="email" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Email</label>
-                  <Input id="email" type="email" required placeholder="john@example.com" className="bg-transparent border-0 border-b border-border rounded-none px-0 focus-visible:ring-0 focus-visible:border-foreground transition-colors" />
+                  <Input id="email" type="email" value={formData.email} onChange={handleChange} required placeholder="john@example.com" className="bg-transparent border-0 border-b border-border rounded-none px-0 focus-visible:ring-0 focus-visible:border-foreground transition-colors" />
                 </div>
               </div>
               
               <div className="space-y-3">
                 <label htmlFor="subject" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Subject</label>
-                <Input id="subject" required placeholder="Project Inquiry" className="bg-transparent border-0 border-b border-border rounded-none px-0 focus-visible:ring-0 focus-visible:border-foreground transition-colors" />
+                <Input id="subject" value={formData.subject} onChange={handleChange} required placeholder="Project Inquiry" className="bg-transparent border-0 border-b border-border rounded-none px-0 focus-visible:ring-0 focus-visible:border-foreground transition-colors" />
               </div>
               
               <div className="space-y-3">
                 <label htmlFor="message" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Message</label>
-                <Textarea id="message" required placeholder="Hello, I'd like to discuss..." className="bg-transparent border-0 border-b border-border rounded-none px-0 min-h-[120px] resize-none focus-visible:ring-0 focus-visible:border-foreground transition-colors" />
+                <Textarea id="message" value={formData.message} onChange={handleChange} required placeholder="Hello, I'd like to discuss..." className="bg-transparent border-0 border-b border-border rounded-none px-0 min-h-[120px] resize-none focus-visible:ring-0 focus-visible:border-foreground transition-colors" />
               </div>
               
+              {submitStatus === 'success' && (
+                <div className="text-green-500 text-sm font-mono mt-4">
+                  Message sent successfully! I will get back to you soon.
+                </div>
+              )}
+              {submitStatus === 'error' && (
+                <div className="text-red-500 text-sm font-mono mt-4">
+                  Something went wrong. Please try again or email me directly.
+                </div>
+              )}
+
               <Button type="submit" disabled={isSubmitting} size="lg" className="w-full bg-foreground text-background hover:bg-zinc-800 rounded-none h-14 uppercase tracking-widest text-sm font-mono mt-8 transition-colors duration-300">
                 {isSubmitting ? "Sending..." : "Submit Message"}
               </Button>
