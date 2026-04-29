@@ -93,6 +93,14 @@ const Contact: React.FC = () => {
             </div>
             
             <div>
+              <h3 className="text-sm font-mono uppercase tracking-widest text-muted-foreground mb-4">Phone / WhatsApp</h3>
+              <a href="https://wa.me/8801869943362" target="_blank" rel="noopener noreferrer" className="text-xl font-serif text-foreground hover:text-zinc-500 transition-colors inline-block relative group">
+                +880 186 994 3362
+                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-foreground transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            </div>
+            
+            <div>
               <h3 className="text-sm font-mono uppercase tracking-widest text-muted-foreground mb-4">Availability</h3>
               <p className="text-xl font-serif text-foreground flex items-center gap-3">
                 <span className="relative flex h-3 w-3">
