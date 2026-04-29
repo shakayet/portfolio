@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 
+// TODO: Replace these with your actual EmailJS credentials from https://emailjs.com
+const EMAILJS_SERVICE_ID = 'service_b8qbs9r';
+const EMAILJS_TEMPLATE_ID = 'template_p43dvop';
+const EMAILJS_PUBLIC_KEY = 'aeZ3NufusBcY-Z7sf';
+
 const Contact: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  
+
   // Form state
   const [formData, setFormData] = useState({
     name: '',
@@ -27,29 +33,21 @@ const Contact: React.FC = () => {
     setSubmitStatus('idle');
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
         },
-        body: JSON.stringify({
-          // TODO: Replace with your Web3Forms access key
-          access_key: "YOUR_WEB3FORMS_ACCESS_KEY",
-          ...formData
-        }),
-      });
-
-      const result = await response.json();
-      
-      if (result.success) {
-        setSubmitStatus('success');
-        setFormData({ name: '', email: '', subject: '', message: '' }); // Reset form
-      } else {
-        setSubmitStatus('error');
-      }
+        EMAILJS_PUBLIC_KEY
+      );
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
-      console.error("Error submitting form:", error);
+      console.error('EmailJS error:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -59,7 +57,7 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="py-32 bg-background text-foreground border-t border-border">
       <div className="container mx-auto px-6 md:px-12">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -76,9 +74,9 @@ const Contact: React.FC = () => {
             Have a project in mind? Let's build something reliable and useful.
           </p>
         </motion.div>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -86,7 +84,7 @@ const Contact: React.FC = () => {
             className="bg-zinc-950 p-10 lg:p-14 border border-border"
           >
             <h3 className="text-2xl font-serif font-bold text-foreground mb-10">Send a Message</h3>
-            
+
             <form onSubmit={handleSubmit} className="space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-3">
@@ -98,17 +96,17 @@ const Contact: React.FC = () => {
                   <Input id="email" type="email" value={formData.email} onChange={handleChange} required placeholder="john@example.com" className="bg-transparent border-0 border-b border-border rounded-none px-0 focus-visible:ring-0 focus-visible:border-foreground transition-colors" />
                 </div>
               </div>
-              
+
               <div className="space-y-3">
                 <label htmlFor="subject" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Subject</label>
                 <Input id="subject" value={formData.subject} onChange={handleChange} required placeholder="Project Inquiry" className="bg-transparent border-0 border-b border-border rounded-none px-0 focus-visible:ring-0 focus-visible:border-foreground transition-colors" />
               </div>
-              
+
               <div className="space-y-3">
                 <label htmlFor="message" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Message</label>
                 <Textarea id="message" value={formData.message} onChange={handleChange} required placeholder="Hello, I'd like to discuss..." className="bg-transparent border-0 border-b border-border rounded-none px-0 min-h-[120px] resize-none focus-visible:ring-0 focus-visible:border-foreground transition-colors" />
               </div>
-              
+
               {submitStatus === 'success' && (
                 <div className="text-green-500 text-sm font-mono mt-4">
                   Message sent successfully! I will get back to you soon.
@@ -125,8 +123,8 @@ const Contact: React.FC = () => {
               </Button>
             </form>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -137,7 +135,7 @@ const Contact: React.FC = () => {
               <h3 className="text-sm font-mono uppercase tracking-widest text-muted-foreground mb-4">Location</h3>
               <p className="text-xl font-serif text-foreground">Dhaka, Bangladesh</p>
             </div>
-            
+
             <div>
               <h3 className="text-sm font-mono uppercase tracking-widest text-muted-foreground mb-4">Email</h3>
               <a href="mailto:shakayet.dev@gmail.com" className="text-xl font-serif text-foreground hover:text-zinc-500 transition-colors inline-block relative group">
@@ -145,7 +143,7 @@ const Contact: React.FC = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-foreground transition-all duration-300 group-hover:w-full"></span>
               </a>
             </div>
-            
+
             <div>
               <h3 className="text-sm font-mono uppercase tracking-widest text-muted-foreground mb-4">Phone / WhatsApp</h3>
               <a href="https://wa.me/8801869943362" target="_blank" rel="noopener noreferrer" className="text-xl font-serif text-foreground hover:text-zinc-500 transition-colors inline-block relative group">
@@ -153,7 +151,7 @@ const Contact: React.FC = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-foreground transition-all duration-300 group-hover:w-full"></span>
               </a>
             </div>
-            
+
             <div>
               <h3 className="text-sm font-mono uppercase tracking-widest text-muted-foreground mb-4">Availability</h3>
               <p className="text-xl font-serif text-foreground flex items-center gap-3">
