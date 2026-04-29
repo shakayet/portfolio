@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
         </a>
         
         <nav className={`fixed md:static top-0 right-0 h-screen md:h-auto w-full sm:w-80 md:w-auto bg-background md:bg-transparent flex flex-col md:flex-row items-center justify-center md:justify-end gap-10 md:gap-8 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] border-l border-border md:border-none z-40 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full md:translate-x-0'}`}>
-          {['About', 'Skills', 'Experience', 'Projects'].map((item) => (
+          {['About', 'Highlights', 'Skills', 'Experience', 'Projects'].map((item) => (
             <a 
               key={item}
               href={`#${item.toLowerCase()}`} 

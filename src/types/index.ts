@@ -1,7 +1,7 @@
-import type { ReactNode } from 'react';
 
 export interface SkillCategory {
   title: string;
+  description: string;
+  icon: string;
   skills: string[];
-  icon: ReactNode;
 }

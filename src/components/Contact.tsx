@@ -30,7 +30,7 @@ const Contact: React.FC = () => {
             <div className="w-12 h-1 bg-foreground mx-auto md:mx-0"></div>
           </div>
           <p className="text-muted-foreground font-light max-w-md text-base md:text-lg">
-            Have a project in mind or looking for a backend engineer? Let's discuss how we can build something exceptional together.
+            Have a project in mind? Let's build something reliable and useful.
           </p>
         </motion.div>
         

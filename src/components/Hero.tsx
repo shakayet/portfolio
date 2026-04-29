@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
     const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
 
     tl.fromTo('.reveal-text', 
-      { y: 120, opacity: 0, rotateZ: 2 }, 
+      { y: 120, opacity: 0, rotateZ: 1 }, 
       { y: 0, opacity: 1, rotateZ: 0, duration: 1.4, stagger: 0.15, delay: 0.2 }
     )
     .fromTo('.reveal-fade',
@@ -23,47 +23,42 @@ const Hero: React.FC = () => {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-background" ref={container}>
-      {/* Subtle radial gradient background */}
       <div className="absolute inset-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-900/40 via-background to-background -z-10"></div>
       
       <div className="container mx-auto px-6 md:px-12 z-10 flex flex-col items-start md:items-center text-left md:text-center">
-        <div className="max-w-4xl w-full flex flex-col items-start md:items-center">
+        <div className="max-w-5xl w-full flex flex-col items-start md:items-center">
           
-          <div className="overflow-hidden mb-4 py-2">
-            <h1 className="reveal-text text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-foreground leading-[1.1] tracking-tight">
-              Shakayet Hossain.
+          <div className="overflow-hidden mb-8 py-2">
+            <h1 className="reveal-text text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-foreground leading-[1.15] tracking-tight">
+              Backend Engineer building scalable APIs, automation systems, and real-world SaaS features.
             </h1>
           </div>
           
-          <div className="overflow-hidden mb-10 py-2">
-            <h2 className="reveal-text text-3xl md:text-5xl lg:text-6xl font-serif text-muted-foreground leading-[1.1] tracking-tight">
-              Backend Engineer.
-            </h2>
-          </div>
-          
           <p className="reveal-fade text-lg md:text-xl text-muted-foreground max-w-2xl mb-14 leading-relaxed font-light">
-            I build highly scalable, secure, and performant backend systems. 
-            Specializing in cloud-native architecture, robust APIs, and sophisticated data solutions.
+            I build reliable digital products with clean architecture, strong problem-solving, and a focus on performance.
           </p>
           
-          <div className="reveal-fade flex flex-wrap justify-start md:justify-center gap-6">
-            <Button variant="outline" size="lg" className="rounded-none border-border hover:bg-foreground hover:text-background transition-all duration-300 h-14 px-8 text-sm tracking-wide">
-              <a href="https://github.com/shakayet" target="_blank" rel="noopener noreferrer" className="flex items-center w-full h-full">
-                <FaGithub className="mr-3 h-4 w-4" />
-                GitHub
-              </a>
-            </Button>
-            <Button variant="outline" size="lg" className="rounded-none border-border hover:bg-foreground hover:text-background transition-all duration-300 h-14 px-8 text-sm tracking-wide">
-              <a href="https://linkedin.com/in/srabon-shakhawat" target="_blank" rel="noopener noreferrer" className="flex items-center w-full h-full">
-                <FaLinkedin className="mr-3 h-4 w-4" />
-                LinkedIn
-              </a>
-            </Button>
+          <div className="reveal-fade flex flex-wrap justify-start md:justify-center gap-6 items-center">
             <Button size="lg" className="rounded-none bg-foreground text-background hover:bg-zinc-800 transition-all duration-300 h-14 px-10 text-sm tracking-wide">
+              <a href="#projects" className="flex items-center w-full h-full">
+                View My Work
+              </a>
+            </Button>
+            <Button variant="outline" size="lg" className="rounded-none border-border hover:bg-foreground hover:text-background transition-all duration-300 h-14 px-10 text-sm tracking-wide">
               <a href="#contact" className="flex items-center w-full h-full">
                 Contact Me
               </a>
             </Button>
+            <div className="flex items-center gap-4 ml-0 md:ml-4">
+              <a href="https://github.com/shakayet" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors p-2">
+                <FaGithub className="h-6 w-6" />
+                <span className="sr-only">GitHub</span>
+              </a>
+              <a href="https://linkedin.com/in/srabon-shakhawat" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors p-2">
+                <FaLinkedin className="h-6 w-6" />
+                <span className="sr-only">LinkedIn</span>
+              </a>
+            </div>
           </div>
           
         </div>

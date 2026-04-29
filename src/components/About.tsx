@@ -13,7 +13,7 @@ const About: React.FC = () => {
           className="mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 tracking-tight">
-            About Me.
+            About.
           </h2>
           <div className="w-12 h-1 bg-foreground"></div>
         </motion.div>
@@ -42,13 +42,13 @@ const About: React.FC = () => {
               className="space-y-8 text-lg text-muted-foreground leading-relaxed font-light"
             >
               <p className="text-xl md:text-2xl text-foreground font-serif leading-snug">
-                Backend Engineer with a profound focus on architecting scalable, secure, and robust systems. 
+                I am a software engineer who deeply enjoys solving real-world problems through code.
               </p>
               <p>
-                Specializing in cloud-native applications (<strong className="text-foreground font-medium">Node.js, TypeScript, MongoDB</strong>), I lead the development of enterprise-grade solutions. My approach blends rigorous engineering principles with elegant, maintainable code structures to optimize performance and drive measurable business impact.
+                I focus on building practical, scalable, and maintainable backend systems that solve tangible business problems. My expertise lies in designing robust architectures, integrating complex third-party APIs, and engineering solutions that scale gracefully under load.
               </p>
               <p>
-                As a proven leader, I guide cross-functional teams to deliver complex projects on schedule without compromising on quality. I am passionate about establishing best practices, mentoring developers, and building infrastructure that scales gracefully under pressure.
+                I care profoundly about clean code, system architecture, and actual user impact. Rather than over-engineering, I like turning complex requirements into simple, reliable, and production-ready solutions that teams can easily maintain and extend.
               </p>
             </motion.div>
             
@@ -61,7 +61,7 @@ const About: React.FC = () => {
             >
               {[
                 { label: "Years Experience", value: "3+" },
-                { label: "Projects Delivered", value: "20+" },
+                { label: "Systems Deployed", value: "20+" },
                 { label: "Engineering Teams", value: "Lead" }
               ].map((stat, idx) => (
                 <div key={idx} className="bg-background p-8 text-center flex flex-col justify-center items-center hover:bg-zinc-900/50 transition-colors duration-500">
