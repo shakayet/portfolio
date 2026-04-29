@@ -90,18 +90,8 @@ const Experience: React.FC = () => {
         {/* Education & Extracurricular grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border max-w-5xl mx-auto border border-border">
           <div className="bg-background p-10 lg:p-14 flex flex-col hover:bg-zinc-900/50 transition-colors duration-500">
-            <h3 className="text-3xl font-serif font-bold mb-10 text-foreground">Education.</h3>
-            <div className="mb-12">
-              <h4 className="text-xl font-serif font-bold text-foreground mb-2">B.Sc. in Computer Science</h4>
-              <p className="text-muted-foreground font-mono text-sm mb-6">National University</p>
-              <div className="flex justify-between items-center text-xs font-mono uppercase tracking-widest text-zinc-500 pb-4 border-b border-border">
-                <span>2018 – 2024</span>
-                <span className="text-foreground">GPA: 3.54</span>
-              </div>
-            </div>
-            
-            <h3 className="text-2xl font-serif font-bold mb-8 text-foreground mt-auto">Achievements.</h3>
-            <ul className="flex flex-col gap-4">
+            <h3 className="text-3xl font-serif font-bold mb-10 text-foreground">Achievements.</h3>
+            <ul className="flex flex-col gap-4 mb-12">
               {[
                 { name: "ICPC Dhaka Regional 2021", rank: "Rank 86" },
                 { name: "ICPC Dhaka Regional 2022", rank: "Rank 54" },
@@ -112,6 +102,16 @@ const Experience: React.FC = () => {
                 </li>
               ))}
             </ul>
+
+            <h3 className="text-2xl font-serif font-bold mb-8 text-foreground mt-auto">Education.</h3>
+            <div>
+              <h4 className="text-xl font-serif font-bold text-foreground mb-2">B.Sc. in Computer Science</h4>
+              <p className="text-muted-foreground font-mono text-sm mb-6">National University</p>
+              <div className="flex justify-between items-center text-xs font-mono uppercase tracking-widest text-zinc-500 pb-4 border-b border-border">
+                <span>2018 – 2024</span>
+                <span className="text-foreground">GPA: 3.54</span>
+              </div>
+            </div>
           </div>
 
           <div className="bg-background p-10 lg:p-14 flex flex-col hover:bg-zinc-900/50 transition-colors duration-500">
