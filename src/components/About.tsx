@@ -60,7 +60,7 @@ const About: React.FC = () => {
               className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-border mt-16 border border-border"
             >
               {[
-                { label: "Years Experience", value: "3+" },
+                { label: "Years Experience", value: "2+" },
                 { label: "Systems Deployed", value: "20+" },
                 { label: "Engineering Teams", value: "Lead" }
               ].map((stat, idx) => (
