@@ -6,7 +6,7 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 
 // TODO: Replace these with your actual EmailJS credentials from https://emailjs.com
-const EMAILJS_SERVICE_ID = 'service_b8qbs9r';
+const EMAILJS_SERVICE_ID = 'service_ypbhmdp';
 const EMAILJS_TEMPLATE_ID = 'template_p43dvop';
 const EMAILJS_PUBLIC_KEY = 'aeZ3NufusBcY-Z7sf';
 
