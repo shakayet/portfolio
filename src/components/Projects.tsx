@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ExternalLink, Maximize2, ArrowUpRight, Zap, CheckCircle2, ShieldCheck, Globe, Cpu } from 'lucide-react';
+import { ExternalLink, Zap } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import Lightbox from './ui/Lightbox';
 

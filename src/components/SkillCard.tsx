@@ -10,7 +10,7 @@ import {
   SiApplepay, SiGit, SiGithub, SiGitlab, SiJira, SiClickup, 
   SiFigma, SiEslint, SiPrettier, SiJest, SiPostman, SiSwagger, 
   SiJsonwebtokens, SiSocketdotio, SiPrisma, SiRabbitmq, 
-  SiFirebase, SiZod, SiVite, SiNodemon, SiGraphql, SiHeroku,
+  SiFirebase, SiZod, SiVite, 
   SiWebrtc, SiAgora, SiPm2, SiQuickbooks
 } from 'react-icons/si';
 import { FaAws } from 'react-icons/fa';

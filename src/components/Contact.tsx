@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import emailjs from '@emailjs/browser';
-import { Send, MapPin, Mail, MessageSquare } from 'lucide-react';
+import { Send, MapPin, Mail } from 'lucide-react';
 
 const EMAILJS_SERVICE_ID = 'service_ypbhmdp';
 const EMAILJS_TEMPLATE_ID = 'template_p43dvop';

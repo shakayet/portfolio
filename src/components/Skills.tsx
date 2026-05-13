@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { skillCategories } from '../data/skillsData';
 import SkillCard from './SkillCard';
 

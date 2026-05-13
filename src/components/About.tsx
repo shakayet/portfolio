@@ -1,6 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Cpu, Globe, Zap, Server } from 'lucide-react';
+import { Cpu } from 'lucide-react';
 import { 
   SiTypescript, SiNodedotjs, SiPostgresql, SiMongodb, SiRedis, SiDocker, 
   SiGithubactions

@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Briefcase, GraduationCap, Award, Users } from 'lucide-react';
 
 const Experience: React.FC = () => {
