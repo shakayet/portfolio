@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
-import { Button } from './ui/button';
+import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -8,59 +9,103 @@ const Hero: React.FC = () => {
   const container = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
+    const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
 
-    tl.fromTo('.reveal-text', 
-      { y: 120, opacity: 0, rotateZ: 1 }, 
-      { y: 0, opacity: 1, rotateZ: 0, duration: 1.4, stagger: 0.15, delay: 0.2 }
+    tl.fromTo('.hero-line', 
+      { scaleX: 0 }, 
+      { scaleX: 1, duration: 1.5, stagger: 0.2, delay: 0.5 }
     )
-    .fromTo('.reveal-fade',
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 1.2, stagger: 0.1 },
-      "-=0.8"
+    .fromTo('.hero-reveal',
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, stagger: 0.1 },
+      "-=1"
     );
   }, { scope: container });
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-background" ref={container}>
-      <div className="absolute inset-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-900/40 via-background to-background -z-10"></div>
+    <section id="hero" className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24 overflow-hidden" ref={container}>
+      <div className="noise"></div>
       
-      <div className="container mx-auto px-6 md:px-12 z-10 flex flex-col items-start md:items-center text-left md:text-center">
-        <div className="max-w-5xl w-full flex flex-col items-start md:items-center">
+      {/* Background Glows */}
+      <div className="glow-blob bg-primary/40 w-[600px] h-[600px] -top-[20%] -right-[10%] mix-blend-screen"></div>
+      <div className="glow-blob bg-secondary/30 w-[500px] h-[500px] top-[40%] -left-[10%] mix-blend-screen"></div>
+      
+      <div className="max-w-screen-2xl mx-auto w-full relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-end">
           
-          <div className="overflow-hidden mb-8 py-2">
-            <h1 className="reveal-text text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-foreground leading-[1.15] tracking-tight">
-              Backend Engineer building scalable APIs, automation systems, and real-world SaaS features.
-            </h1>
-          </div>
-          
-          <p className="reveal-fade text-lg md:text-xl text-muted-foreground max-w-2xl mb-14 leading-relaxed font-light">
-            I build reliable digital products with clean architecture, strong problem-solving, and a focus on performance.
-          </p>
-          
-          <div className="reveal-fade flex flex-wrap justify-start md:justify-center gap-6 items-center">
-            <Button size="lg" className="rounded-none bg-foreground text-background hover:bg-zinc-800 transition-all duration-300 h-14 px-10 text-sm tracking-wide">
-              <a href="#projects" className="flex items-center w-full h-full">
-                View My Work
-              </a>
-            </Button>
-            <Button variant="outline" size="lg" className="rounded-none border-border hover:bg-foreground hover:text-background transition-all duration-300 h-14 px-10 text-sm tracking-wide">
-              <a href="#contact" className="flex items-center w-full h-full">
-                Contact Me
-              </a>
-            </Button>
-            <div className="flex items-center gap-4 ml-0 md:ml-4">
-              <a href="https://github.com/shakayet" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors p-2">
-                <FaGithub className="h-6 w-6" />
-                <span className="sr-only">GitHub</span>
-              </a>
-              <a href="https://linkedin.com/in/srabon-shakhawat" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors p-2">
-                <FaLinkedin className="h-6 w-6" />
-                <span className="sr-only">LinkedIn</span>
-              </a>
+          <div className="lg:col-span-8">
+            <div className="flex flex-col gap-12">
+              <div className="flex flex-col gap-4">
+                <motion.span 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                  className="mono-label"
+                >
+                  Backend Engineer // 001
+                </motion.span>
+                <h1 className="hero-reveal text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]">
+                  Engineering <br />
+                  <span className="text-gradient italic">Resilient</span> Systems.
+                </h1>
+              </div>
+
+              <div className="h-px w-full bg-border origin-left hero-line"></div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <p className="hero-reveal text-base text-muted-foreground leading-relaxed font-light">
+                  Building high-performance digital foundations with a focus on scalability, security, and clean backend architecture.
+                </p>
+                <div className="hero-reveal flex flex-wrap gap-8 items-center md:justify-end">
+                  <a href="#projects" className="group flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] font-bold text-white transition-all duration-300">
+                    Explore Work
+                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-300" />
+                  </a>
+                  <a href="/shakayet_backend.pdf" target="_blank" rel="noopener noreferrer" className="text-[10px] uppercase tracking-[0.4em] font-bold text-muted-foreground hover:text-white transition-colors duration-300 border-b border-border hover:border-white pb-1">
+                    Download CV
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-          
+
+          <div className="lg:col-span-4">
+            <div className="flex flex-col gap-12">
+              <div className="hero-reveal flex flex-col gap-6 p-8 glass-card">
+                <div className="flex items-center justify-between">
+                  <span className="mono-label">Active Node</span>
+                  <div className="w-2 h-2 rounded-full bg-secondary shadow-[0_0_10px_rgba(6,182,212,0.8)] animate-pulse"></div>
+                </div>
+                <div className="flex justify-between items-end">
+                  <div className="flex flex-col gap-1">
+                    <span className="text-2xl font-bold uppercase tracking-tighter text-white">Dhaka</span>
+                    <span className="text-[10px] uppercase tracking-widest text-muted-foreground">Bangladesh</span>
+                  </div>
+                  <div className="flex flex-col items-end gap-1">
+                    <span className="text-sm font-mono text-white/90">{new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+                    <span className="text-[9px] uppercase tracking-widest text-secondary font-bold">Live Status</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="hero-reveal flex gap-8 px-2">
+                <a href="https://github.com/shakayet" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition-all duration-300">
+                  <FaGithub size={18} />
+                </a>
+                <a href="https://linkedin.com/in/srabon-shakhawat" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition-all duration-300">
+                  <FaLinkedin size={18} />
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      {/* Decorative Specs */}
+      <div className="absolute top-1/2 right-0 -translate-y-1/2 hidden xl:block opacity-5 select-none">
+        <div className="text-[20vh] font-mono font-black uppercase tracking-tighter vertical-text rotate-180">
+          Backend_Dev
         </div>
       </div>
     </section>

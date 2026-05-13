@@ -4,48 +4,30 @@ import { skillCategories } from '../data/skillsData';
 import SkillCard from './SkillCard';
 
 const Skills: React.FC = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
   return (
-    <section id="skills" className="py-32 bg-background text-foreground border-t border-border">
-      <div className="container mx-auto px-6 md:px-12">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-20 text-center md:text-left flex flex-col md:flex-row justify-between items-end gap-6"
-        >
-          <div>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 tracking-tight">
-              Expertise.
-            </h2>
-            <div className="w-12 h-1 bg-foreground mx-auto md:mx-0"></div>
-          </div>
-          <p className="text-muted-foreground font-light max-w-md text-base md:text-lg">
-            A carefully curated stack of tools, frameworks, and technologies I leverage to build robust architectures.
-          </p>
-        </motion.div>
+    <section id="skills" className="py-24 px-6 md:px-12 lg:px-24 border-t border-border">
+      <div className="max-w-screen-2xl mx-auto">
+        <div className="section-heading">02 / Competencies</div>
         
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-px bg-border border border-border"
-        >
+        <div className="flex flex-col md:flex-row justify-between items-start mb-16 gap-8">
+          <div className="max-w-2xl">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+              A comprehensive technical <br />
+              <span className="text-gradient italic font-serif">ecosystem</span> for scale.
+            </h2>
+          </div>
+          <div className="max-w-md">
+            <p className="text-sm md:text-base text-muted-foreground font-light leading-relaxed">
+              Specialized in building high-availability backend systems, optimizing database performance, and engineering cloud-native infrastructures.
+            </p>
+          </div>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {skillCategories.map((category, index) => (
-            <SkillCard key={index} category={category} />
+            <SkillCard key={index} category={category} index={index} />
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -1,31 +1,73 @@
 import React from 'react';
-import { Mail } from 'lucide-react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-zinc-950 py-16 border-t border-border">
-      <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-8">
-        <div className="text-center md:text-left">
-          <a href="#hero" className="text-2xl font-serif font-bold tracking-tight text-foreground inline-block mb-3">
-            Shakayet.
-          </a>
-          <p className="text-muted-foreground font-light text-sm max-w-xs mx-auto md:mx-0">
-            © {new Date().getFullYear()} Shakayet Hossain.<br />
-            Designed with absolute minimalism.
-          </p>
+    <footer className="py-24 px-6 md:px-12 lg:px-24 border-t border-border bg-background relative overflow-hidden">
+      <div className="max-w-screen-2xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+          
+          <div className="lg:col-span-6 flex flex-col gap-10">
+            <a href="#hero" className="text-2xl font-medium tracking-tighter text-white uppercase group">
+              Shakayet<span className="text-muted-foreground italic transition-all duration-500 group-hover:pl-2">.</span>
+            </a>
+            <p className="text-sm md:text-base text-muted-foreground font-light leading-relaxed max-w-md">
+              Building the next generation of scalable backend systems. Combining technical precision with creative problem-solving to build resilient digital foundations.
+            </p>
+            <div className="flex gap-8">
+              {[
+                { name: 'GitHub', url: 'https://github.com/shakayet', icon: FaGithub },
+                { name: 'LinkedIn', url: 'https://linkedin.com/in/srabon-shakhawat', icon: FaLinkedin },
+                { name: 'WhatsApp', url: 'https://wa.me/8801869943362', icon: FaWhatsapp }
+              ].map((social) => (
+                <a 
+                  key={social.name}
+                  href={social.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-muted-foreground hover:text-white transition-all duration-300"
+                >
+                  <social.icon size={18} />
+                </a>
+              ))}
+            </div>
+          </div>
+          
+          <div className="lg:col-span-3 flex flex-col gap-10">
+            <span className="mono-label">System Index</span>
+            <ul className="flex flex-col gap-4">
+              {['About', 'Projects', 'Experience', 'Contact'].map((item) => (
+                <li key={item}>
+                  <a href={`#${item.toLowerCase()}`} className="text-sm font-light text-muted-foreground hover:text-white transition-all duration-300 flex items-center gap-3 group">
+                    <span className="text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          <div className="lg:col-span-3 flex flex-col gap-10">
+            <span className="mono-label">Current Deployment</span>
+            <div className="p-8 border border-border bg-white/[0.01] flex flex-col gap-4">
+              <div className="flex items-center gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
+                <span className="text-[10px] uppercase tracking-widest text-white">Live Node</span>
+              </div>
+              <p className="text-[11px] font-light text-muted-foreground leading-relaxed">
+                Operating from Dhaka, Bangladesh. Open for global collaborations and complex engineering challenges.
+              </p>
+            </div>
+          </div>
         </div>
         
-        <div className="flex gap-6">
-          <a href="https://github.com/shakayet" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors duration-300" aria-label="GitHub">
-            <FaGithub className="w-5 h-5" />
-          </a>
-          <a href="https://linkedin.com/in/srabon-shakhawat" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors duration-300" aria-label="LinkedIn">
-            <FaLinkedin className="w-5 h-5" />
-          </a>
-          <a href="mailto:shakayet.dev@gmail.com" className="text-muted-foreground hover:text-foreground transition-colors duration-300" aria-label="Email">
-            <Mail className="w-5 h-5" />
-          </a>
+        <div className="mt-24 pt-10 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-8">
+          <span className="mono-label text-[8px]">
+            © {new Date().getFullYear()} Shakayet Hossain. All rights reserved.
+          </span>
+          <span className="mono-label text-[8px]">
+            Built with <span className="text-primary italic">Precision</span> in Dhaka
+          </span>
         </div>
       </div>
     </footer>

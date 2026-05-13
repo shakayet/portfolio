@@ -1,143 +1,184 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
-
-gsap.registerPlugin(ScrollTrigger);
+import { Briefcase, GraduationCap, Award, Users } from 'lucide-react';
 
 const Experience: React.FC = () => {
-  const container = useRef<HTMLDivElement>(null);
-  const lineRef = useRef<HTMLDivElement>(null);
-
-  useGSAP(() => {
-    gsap.fromTo(lineRef.current, 
-      { height: '0%' },
-      { 
-        height: '100%', 
-        ease: 'none',
-        scrollTrigger: {
-          trigger: container.current,
-          start: 'top center',
-          end: 'bottom center',
-          scrub: true,
-        }
-      }
-    );
-  }, { scope: container });
-
   return (
-    <section id="experience" className="py-32 bg-zinc-950 text-foreground border-t border-border" ref={container}>
-      <div className="container mx-auto px-6 md:px-12">
+    <section id="experience" className="py-24 px-6 md:px-12 lg:px-24 border-t border-border">
+      <div className="max-w-screen-2xl mx-auto">
+        <div className="section-heading">04 / Journey</div>
         
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-24 text-center"
-        >
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 tracking-tight">
-            Experience.
-          </h2>
-          <div className="w-12 h-1 bg-foreground mx-auto"></div>
-        </motion.div>
-        
-        <div className="max-w-4xl mx-auto mb-32 pl-8 relative">
-          <div className="absolute top-0 left-0 w-[1px] h-full bg-border"></div>
-          <div ref={lineRef} className="absolute top-0 left-0 w-[2px] bg-foreground origin-top"></div>
-          
-          <div className="relative pb-16 last:pb-0">
-            <motion.div 
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, ease: "backOut" }}
-              className="absolute -left-8 -translate-x-1/2 w-3 h-3 bg-background border-2 border-foreground"
-            ></motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="bg-background border border-border p-10 hover:bg-zinc-900/50 transition-colors duration-500"
-            >
-              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8 pb-8 border-b border-border">
-                <div>
-                  <h3 className="text-2xl font-serif font-bold text-foreground">Team Lead / Jr. Backend Developer</h3>
-                  <p className="text-muted-foreground font-mono text-sm mt-2">SparkTech Agency</p>
+        <div className="flex flex-col gap-24">
+          {/* 1. Professional Experience - Full Width */}
+          <div className="flex flex-col gap-12">
+            <div className="flex items-center gap-4">
+              <Briefcase size={20} className="text-primary" />
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+                Professional <span className="text-gradient italic font-serif">Evolution</span>
+              </h2>
+            </div>
+
+            <div className="flex flex-col gap-12">
+              <div className="glass-card p-8 md:p-12 relative overflow-hidden group">
+                <div className="absolute -inset-full bg-gradient-to-tr from-primary/0 via-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 blur-3xl pointer-events-none"></div>
+                
+                <div className="relative z-10">
+                  <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-6 mb-12 border-b border-border/50 pb-8">
+                    <div className="flex flex-col gap-2">
+                      <span className="mono-label text-primary">April 2024 — Present</span>
+                      <h3 className="text-3xl font-bold tracking-tight text-white">SparkTech Agency</h3>
+                    </div>
+                    <div className="md:text-right">
+                      <span className="text-lg font-medium text-white/90">Team Lead / Jr. Backend Developer</span>
+                      <p className="text-sm text-muted-foreground mt-1">Full-time • Remote</p>
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <div className="lg:col-span-4">
+                      <span className="mono-label">Core Responsibilities</span>
+                    </div>
+                    <div className="lg:col-span-8">
+                      <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 text-sm md:text-base text-muted-foreground font-light leading-relaxed">
+                        <li className="flex gap-4">
+                          <span className="text-primary mt-1.5">•</span>
+                          <span>Leading a high-performing backend team to deliver complex projects on schedule.</span>
+                        </li>
+                        <li className="flex gap-4">
+                          <span className="text-primary mt-1.5">•</span>
+                          <span>Engineering scalable solutions with Node.js, Express, and MongoDB.</span>
+                        </li>
+                        <li className="flex gap-4">
+                          <span className="text-primary mt-1.5">•</span>
+                          <span>Implementing best practices: code reviews, automated testing, and clean architecture.</span>
+                        </li>
+                        <li className="flex gap-4">
+                          <span className="text-primary mt-1.5">•</span>
+                          <span>Optimizing performance with Redis caching and query optimization.</span>
+                        </li>
+                        <li className="flex gap-4">
+                          <span className="text-primary mt-1.5">•</span>
+                          <span>Streamlining deployments using Docker and CI/CD pipelines.</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-                <span className="text-xs font-mono tracking-widest uppercase text-foreground bg-zinc-900 px-4 py-2 border border-border">April 2024 – Present</span>
-              </div>
-              <ul className="space-y-4">
-                {[
-                  "Led a high-performing backend team to deliver multiple complex projects on schedule, mentoring developers and driving technical excellence.",
-                  "Architected and implemented scalable backend solutions using Node.js/Express and MongoDB for enterprise clients.",
-                  "Instituted best practices like code reviews and automated testing to reduce defects and streamline development.",
-                  "Enhanced API performance using Redis caching and optimized database queries.",
-                  "Established CI/CD pipelines and containerized deployments using Docker and GitHub Actions."
-                ].map((item, idx) => (
-                  <li key={idx} className="relative pl-6 text-muted-foreground font-light text-base leading-relaxed before:content-['—'] before:absolute before:left-0 before:text-foreground">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          </div>
-        </div>
-
-        {/* Education & Extracurricular grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border max-w-5xl mx-auto border border-border">
-          <div className="bg-background p-10 lg:p-14 flex flex-col hover:bg-zinc-900/50 transition-colors duration-500">
-            <h3 className="text-3xl font-serif font-bold mb-10 text-foreground">Achievements.</h3>
-            <ul className="flex flex-col gap-4 mb-12">
-              {[
-                { name: "ICPC Dhaka Regional 2021", rank: "Rank 86" },
-                { name: "ICPC Dhaka Regional 2022", rank: "Rank 54" },
-                { name: "ICPC Dhaka Regional 2023", rank: "Rank 104" }
-              ].map((ach, idx) => (
-                <li key={idx} className="flex justify-between items-center pb-4 border-b border-border text-xs font-mono uppercase tracking-wider text-muted-foreground last:border-0 last:pb-0">
-                  <strong className="text-foreground font-medium">{ach.name}</strong> <span>{ach.rank}</span>
-                </li>
-              ))}
-            </ul>
-
-            <h3 className="text-2xl font-serif font-bold mb-8 text-foreground mt-auto">Education.</h3>
-            <div>
-              <h4 className="text-xl font-serif font-bold text-foreground mb-2">B.Sc. in Computer Science</h4>
-              <p className="text-muted-foreground font-mono text-sm mb-6">National University</p>
-              <div className="flex justify-between items-center text-xs font-mono uppercase tracking-widest text-zinc-500 pb-4 border-b border-border">
-                <span>2018 – 2024</span>
-                <span className="text-foreground">GPA: 3.54</span>
               </div>
             </div>
           </div>
 
-          <div className="bg-background p-10 lg:p-14 flex flex-col hover:bg-zinc-900/50 transition-colors duration-500">
-            <h3 className="text-3xl font-serif font-bold mb-10 text-foreground">Leadership.</h3>
-            <div>
-              <h4 className="text-xl font-serif font-bold text-foreground mb-2">President, Programming Club</h4>
-              <p className="text-muted-foreground font-mono text-sm mb-6">Tejgaon College</p>
-              <div className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-10 pb-4 border-b border-border">
-                <span>2018 – 2024</span>
+          {/* 2. Academic & Competitive Foundation - Split Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Education */}
+            <div className="flex flex-col gap-8">
+              <div className="flex items-center gap-4">
+                <GraduationCap size={20} className="text-secondary" />
+                <h2 className="text-2xl font-bold tracking-tight">Academic <span className="text-secondary italic">Foundation</span></h2>
               </div>
-              <ul className="space-y-6">
-                {[
-                  "Organized a two-day CSE Fest and multiple programming workshops on problem solving and STL fundamentals.",
-                  "Mentored student teams for ICPC and NCPC preparation.",
-                  "Developed and led regular problem-solving sessions.",
-                  "Fostered teamwork, leadership, and continuous learning."
-                ].map((item, idx) => (
-                  <li key={idx} className="relative pl-6 text-muted-foreground font-light text-base leading-relaxed before:content-['—'] before:absolute before:left-0 before:text-foreground">
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              
+              <div className="glass-card p-8 group h-full">
+                <div className="flex flex-col gap-6">
+                  <div className="flex justify-between items-start">
+                    <div className="flex flex-col gap-2">
+                      <span className="mono-label text-secondary">2018 — 2024</span>
+                      <h4 className="text-xl font-bold text-white">B.Sc. in Computer Science & Engineering</h4>
+                      <p className="text-muted-foreground">National University (Tejgaon College)</p>
+                    </div>
+                    <span className="text-[10px] uppercase tracking-widest text-secondary font-bold px-3 py-1 border border-secondary/20 rounded-full">Graduated</span>
+                  </div>
+                  
+                  <div className="pt-6 border-t border-border/50 flex flex-col gap-4">
+                    <div className="flex justify-between items-center">
+                      <span className="text-xs uppercase tracking-widest text-muted-foreground">CGPA</span>
+                      <span className="text-sm font-mono text-white">3.54 / 4.00</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-xs uppercase tracking-widest text-muted-foreground">Club Role</span>
+                      <span className="text-sm font-mono text-white">President, Programming Club</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Achievements */}
+            <div className="flex flex-col gap-8">
+              <div className="flex items-center gap-4">
+                <Award size={20} className="text-primary" />
+                <h2 className="text-2xl font-bold tracking-tight">Competitive <span className="text-primary italic">Accolades</span></h2>
+              </div>
+              
+              <div className="glass-card p-8 group h-full">
+                <div className="flex flex-col gap-6">
+                  <span className="mono-label">ICPC Regionals</span>
+                  <div className="flex flex-col gap-4">
+                    {[
+                      { name: "ICPC Regional 2022", rank: "Rank 54", color: "from-primary/20" },
+                      { name: "ICPC Regional 2021", rank: "Rank 86", color: "from-white/10" },
+                      { name: "ICPC Regional 2023", rank: "Rank 104", color: "from-secondary/20" }
+                    ].map((ach, idx) => (
+                      <div key={idx} className="flex justify-between items-center p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-white/20 transition-all duration-300">
+                        <span className="text-xs uppercase tracking-widest text-muted-foreground">{ach.name}</span>
+                        <span className="text-sm font-mono font-bold text-white">
+                          {ach.rank}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 3. Leadership & Impact - Full Width */}
+          <div className="flex flex-col gap-12">
+            <div className="flex items-center gap-4">
+              <Users size={20} className="text-secondary" />
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+                Leadership & <span className="text-secondary italic">Impact</span>
+              </h2>
+            </div>
+
+            <div className="glass-card p-8 md:p-12 group relative overflow-hidden">
+              <div className="absolute -inset-full bg-gradient-to-tr from-secondary/0 via-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 blur-3xl pointer-events-none"></div>
+              
+              <div className="relative z-10 flex flex-col gap-12">
+                <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-6 border-b border-border/50 pb-8">
+                  <div className="flex flex-col gap-2">
+                    <span className="mono-label text-secondary">2018 — 2024</span>
+                    <h3 className="text-3xl font-bold tracking-tight text-white">Programming Club, Tejgaon College</h3>
+                  </div>
+                  <div className="md:text-right">
+                    <span className="text-lg font-medium text-white/90 italic">President</span>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                  <div className="lg:col-span-4">
+                    <p className="text-sm md:text-base text-muted-foreground font-light leading-relaxed">
+                      Driving technical excellence and community growth through event organization and peer mentorship.
+                    </p>
+                  </div>
+                  <div className="lg:col-span-8">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                      {[
+                        { title: "Organization", desc: "Organized a two-day CSE Fest and multiple programming workshops." },
+                        { title: "Mentorship", desc: "Mentored students for ICPC and NCPC preparation." },
+                        { title: "Technical Training", desc: "Conducted regular sessions on problem-solving and STL fundamentals." }
+                      ].map((item, idx) => (
+                        <div key={idx} className="p-6 rounded-2xl bg-white/[0.03] border border-white/[0.05] hover:bg-white/[0.05] transition-all duration-300">
+                          <h4 className="text-xs uppercase tracking-widest text-secondary font-bold mb-3">{item.title}</h4>
+                          <p className="text-[11px] md:text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
