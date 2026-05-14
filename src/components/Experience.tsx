@@ -28,7 +28,7 @@ const Experience: React.FC = () => {
                       <h3 className="text-3xl font-bold tracking-tight text-white">SparkTech Agency</h3>
                     </div>
                     <div className="md:text-right">
-                      <span className="text-lg font-medium text-white/90">Team Lead / Jr. Backend Developer</span>
+                      <span className="text-lg font-medium text-white/90">Team Lead / Software Engineer</span>
                       <p className="text-sm text-muted-foreground mt-1">Full-time • Remote</p>
                     </div>
                   </div>

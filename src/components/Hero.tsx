@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
                   transition={{ delay: 0.5 }}
                   className="mono-label"
                 >
-                  Backend Engineer // 001
+                  Software Engineer // 001
                 </motion.span>
                 <h1 className="hero-reveal text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]">
                   Engineering <br />

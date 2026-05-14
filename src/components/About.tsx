@@ -36,7 +36,7 @@ const About: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-sm md:text-base text-muted-foreground leading-relaxed font-light">
               <p>
-                I am a **Backend Engineer** specialized in engineering scalable APIs, robust automation systems, and high-availability payment infrastructures. I transform complex business logic into high-performance, resilient systems that form the backbone of modern SaaS solutions.
+                I am a **Software Engineer** specialized in engineering scalable APIs, robust automation systems, and high-availability payment infrastructures. I transform complex business logic into high-performance, resilient systems that form the backbone of modern SaaS solutions.
               </p>
               <p>
                 Leveraging a strong foundation in **competitive programming (ICPC)**, I focus on the intersection of algorithmic efficiency and production-grade reliability. My approach prioritizes clean architecture, automated testing, and comprehensive monitoring to ensure systems scale effortlessly under load.
@@ -73,7 +73,7 @@ const About: React.FC = () => {
               />
               <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent">
                 <div className="flex flex-col gap-1">
-                  <span className="mono-label text-white/70">Backend Developer</span>
+                  <span className="mono-label text-white/70">Software Engineer</span>
                   <span className="text-xl font-medium text-white uppercase tracking-wider">Shakayet Hossain</span>
                 </div>
               </div>
