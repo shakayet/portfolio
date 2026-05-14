@@ -54,8 +54,8 @@ const EngineeringHighlights: React.FC = () => {
               
               <div className="relative z-10 flex flex-col h-full">
                 <div className="mb-6 flex justify-between items-start">
-                  <div className="p-2 md:p-3 rounded-xl bg-white/[0.03] border border-white/[0.08] group-hover:bg-primary/10 group-hover:border-primary/30 transition-all duration-500">
-                    {React.cloneElement(item.icon as React.ReactElement, { size: 20 })}
+                  <div className="p-2.5 md:p-3 rounded-xl bg-white/[0.03] border border-white/[0.08] group-hover:bg-primary/10 group-hover:border-primary/30 transition-all duration-500">
+                    {React.cloneElement(item.icon as React.ReactElement<any>, { size: 20 })}
                   </div>
                   <span className="mono-label text-[8px] bg-primary/10 text-primary px-3 py-1 rounded-full whitespace-nowrap">{item.metric}</span>
                 </div>

@@ -94,8 +94,7 @@ const About: React.FC = () => {
                       className="flex items-center justify-center transition-colors duration-300"
                     >
                       <item.icon 
-                        size={16} md:size={18} 
-                        className="transition-transform duration-300 group-hover/item:scale-110" 
+                        className="w-4 h-4 md:w-[18px] md:h-[18px] transition-transform duration-300 group-hover/item:scale-110" 
                         style={{ color: item.color }} 
                       />
                     </div>
