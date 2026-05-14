@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import { ShieldCheck, Activity, Cpu, Layers } from 'lucide-react';
 
