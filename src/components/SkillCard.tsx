@@ -87,35 +87,35 @@ const SkillCard: React.FC<SkillCardProps> = ({ category, index }) => {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="glass-card p-10 flex flex-col h-full group relative overflow-hidden rounded-3xl border border-white/5 hover:border-white/20 transition-all duration-500"
+      className="glass-card p-6 md:p-10 flex flex-col h-full group relative overflow-hidden rounded-3xl border border-white/5 hover:border-white/20 transition-all duration-500"
     >
       {/* Background Glow */}
       <div className="absolute -inset-full bg-gradient-to-tr from-primary/0 via-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 blur-3xl z-0 pointer-events-none"></div>
       
       <div className="relative z-10 flex flex-col h-full">
         {/* Header Section */}
-        <div className="flex flex-col gap-8 mb-10">
+        <div className="flex flex-col gap-6 md:gap-8 mb-8 md:mb-10">
           <div className="flex items-center justify-between">
-            <div className="w-14 h-14 flex items-center justify-center rounded-2xl bg-white/[0.03] border border-white/[0.08] text-primary group-hover:scale-110 group-hover:bg-primary/10 group-hover:border-primary/30 transition-all duration-500">
+            <div className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-2xl bg-white/[0.03] border border-white/[0.08] text-primary group-hover:scale-110 group-hover:bg-primary/10 group-hover:border-primary/30 transition-all duration-500">
               <CategoryIcon path={category.icon} />
             </div>
-            <span className="text-4xl font-bold font-mono opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-500 select-none">
+            <span className="text-3xl md:text-4xl font-bold font-mono opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-500 select-none">
               0{index + 1}
             </span>
           </div>
           
-          <div className="flex flex-col gap-3">
-            <h3 className="text-2xl font-bold tracking-tight text-white group-hover:text-primary transition-colors duration-300">
+          <div className="flex flex-col gap-2 md:gap-3">
+            <h3 className="text-xl md:text-2xl font-bold tracking-tight text-white group-hover:text-primary transition-colors duration-300">
               {category.title}
             </h3>
-            <p className="text-sm text-muted-foreground font-light leading-relaxed">
+            <p className="text-xs md:text-sm text-muted-foreground font-light leading-relaxed">
               {category.description}
             </p>
           </div>
         </div>
         
         {/* Skills Tag Section */}
-        <div className="flex flex-wrap gap-3 mt-auto pt-10 border-t border-white/[0.05]">
+        <div className="flex flex-wrap gap-2 md:gap-3 mt-auto pt-8 md:pt-10 border-t border-white/[0.05]">
           {category.skills.map((skill, idx) => {
             const item = iconMap[skill];
             const Icon = item?.icon;
@@ -124,17 +124,17 @@ const SkillCard: React.FC<SkillCardProps> = ({ category, index }) => {
             return (
               <div 
                 key={idx} 
-                className="group/skill flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.05] hover:border-white/20 hover:-translate-y-1 transition-all duration-300"
+                className="group/skill flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2 md:py-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.05] hover:border-white/20 hover:-translate-y-1 transition-all duration-300"
               >
                 <div 
                   className="flex items-center justify-center transition-colors duration-300"
                   style={{ color: '#888888' }} // Initial gray color
                 >
                   <div className="group-hover/skill:scale-110 transition-transform duration-300" style={{ color: brandColor }}>
-                    {Icon ? <Icon size={18} /> : <span className="text-[10px] font-mono opacity-50">{skill[0]}</span>}
+                    {Icon ? <Icon size={16} md:size={18} /> : <span className="text-[9px] md:text-[10px] font-mono opacity-50">{skill[0]}</span>}
                   </div>
                 </div>
-                <span className="text-[10px] uppercase tracking-widest font-medium text-muted-foreground group-hover/skill:text-white transition-colors duration-300">
+                <span className="text-[9px] md:text-[10px] uppercase tracking-widest font-medium text-muted-foreground group-hover/skill:text-white transition-colors duration-300">
                   {skill}
                 </span>
               </div>

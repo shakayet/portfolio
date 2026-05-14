@@ -23,18 +23,18 @@ const Hero: React.FC = () => {
   }, { scope: container });
 
   return (
-    <section id="hero" className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24 overflow-hidden" ref={container}>
+    <section id="hero" className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24 pt-32 pb-24 overflow-hidden" ref={container}>
       <div className="noise"></div>
       
       {/* Background Glows */}
-      <div className="glow-blob bg-primary/40 w-[600px] h-[600px] -top-[20%] -right-[10%] mix-blend-screen"></div>
-      <div className="glow-blob bg-secondary/30 w-[500px] h-[500px] top-[40%] -left-[10%] mix-blend-screen"></div>
+      <div className="glow-blob bg-primary/40 w-[300px] md:w-[600px] h-[300px] md:h-[600px] -top-[10%] -right-[10%] mix-blend-screen"></div>
+      <div className="glow-blob bg-secondary/30 w-[250px] md:w-[500px] h-[250px] md:h-[500px] top-[40%] -left-[10%] mix-blend-screen"></div>
       
       <div className="max-w-screen-2xl mx-auto w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center lg:items-end">
           
           <div className="lg:col-span-8">
-            <div className="flex flex-col gap-12">
+            <div className="flex flex-col gap-8 md:gap-12">
               <div className="flex flex-col gap-4">
                 <motion.span 
                   initial={{ opacity: 0 }}
@@ -44,19 +44,19 @@ const Hero: React.FC = () => {
                 >
                   Software Engineer // 001
                 </motion.span>
-                <h1 className="hero-reveal text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]">
-                  Engineering <br />
+                <h1 className="hero-reveal text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] max-w-[15ch]">
+                  Engineering <br className="hidden sm:block" />
                   <span className="text-gradient italic">Resilient</span> Systems.
                 </h1>
               </div>
 
               <div className="h-px w-full bg-border origin-left hero-line"></div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <p className="hero-reveal text-base text-muted-foreground leading-relaxed font-light">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                <p className="hero-reveal text-sm md:text-base text-muted-foreground leading-relaxed font-light max-w-md">
                   Building high-performance digital foundations with a focus on scalability, security, and clean backend architecture.
                 </p>
-                <div className="hero-reveal flex flex-wrap gap-8 items-center md:justify-end">
+                <div className="hero-reveal flex flex-wrap gap-6 md:gap-8 items-center md:justify-end">
                   <a href="#projects" className="group flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] font-bold text-white transition-all duration-300">
                     Explore Work
                     <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-300" />
@@ -69,9 +69,9 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-4">
-            <div className="flex flex-col gap-12">
-              <div className="hero-reveal flex flex-col gap-6 p-8 glass-card">
+          <div className="lg:col-span-4 w-full">
+            <div className="flex flex-col gap-8 md:gap-12">
+              <div className="hero-reveal flex flex-col gap-6 p-6 md:p-8 glass-card w-full">
                 <div className="flex items-center justify-between">
                   <span className="mono-label">Active Node</span>
                   <div className="w-2 h-2 rounded-full bg-secondary shadow-[0_0_10px_rgba(6,182,212,0.8)] animate-pulse"></div>

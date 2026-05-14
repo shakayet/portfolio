@@ -30,13 +30,13 @@ const highlights = [
 
 const EngineeringHighlights: React.FC = () => {
   return (
-    <section className="py-24 px-6 md:px-12 lg:px-24 border-t border-border bg-white/[0.01]">
+    <section className="py-24 px-6 md:px-12 lg:px-24 border-t border-border bg-white/[0.01] overflow-hidden">
       <div className="max-w-screen-2xl mx-auto">
         <div className="section-heading text-primary">02 / Technical Impact</div>
         
-        <div className="flex flex-col lg:flex-row justify-between items-start mb-16 gap-8">
+        <div className="flex flex-col lg:flex-row justify-between items-start mb-12 md:mb-16 gap-6 md:gap-8">
           <div className="max-w-2xl">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 md:mb-6">
               Engineering <span className="text-gradient italic font-serif">highlights</span> and impact.
             </h2>
           </div>
@@ -47,23 +47,23 @@ const EngineeringHighlights: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {highlights.map((item, idx) => (
-            <div key={idx} className="glass-card p-8 group relative overflow-hidden flex flex-col h-full">
+            <div key={idx} className="glass-card p-6 md:p-8 group relative overflow-hidden flex flex-col h-full">
               <div className="absolute -inset-full bg-gradient-to-tr from-primary/0 via-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 blur-3xl pointer-events-none"></div>
               
               <div className="relative z-10 flex flex-col h-full">
                 <div className="mb-6 flex justify-between items-start">
-                  <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.08] group-hover:bg-primary/10 group-hover:border-primary/30 transition-all duration-500">
-                    {item.icon}
+                  <div className="p-2 md:p-3 rounded-xl bg-white/[0.03] border border-white/[0.08] group-hover:bg-primary/10 group-hover:border-primary/30 transition-all duration-500">
+                    {React.cloneElement(item.icon as React.ReactElement, { size: 20 })}
                   </div>
-                  <span className="mono-label text-[8px] bg-primary/10 text-primary px-3 py-1 rounded-full">{item.metric}</span>
+                  <span className="mono-label text-[8px] bg-primary/10 text-primary px-3 py-1 rounded-full whitespace-nowrap">{item.metric}</span>
                 </div>
                 
-                <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4 group-hover:text-primary transition-colors duration-300">
                   {item.title}
                 </h3>
-                <p className="text-sm text-muted-foreground font-light leading-relaxed mb-6 flex-grow">
+                <p className="text-xs md:text-sm text-muted-foreground font-light leading-relaxed mb-6 flex-grow">
                   {item.description}
                 </p>
                 

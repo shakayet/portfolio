@@ -53,53 +53,53 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 md:px-12 lg:px-24 border-t border-border">
+    <section id="contact" className="py-24 px-6 md:px-12 lg:px-24 border-t border-border overflow-hidden">
       <div className="max-w-screen-2xl mx-auto">
         <div className="section-heading">07 / Contact</div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
           {/* Info Side */}
-          <div className="lg:col-span-5 flex flex-col gap-12">
+          <div className="lg:col-span-5 flex flex-col gap-10 md:gap-12">
             <div className="flex flex-col gap-6">
-              <h2 className="text-3xl md:text-4xl font-medium tracking-tight">
-                Let's discuss your next <br />
+              <h2 className="text-3xl sm:text-4xl font-medium tracking-tight">
+                Let's discuss your next <br className="hidden sm:block" />
                 <span className="text-muted-foreground italic">infrastructure</span>.
               </h2>
-              <div className="h-px w-24 bg-primary"></div>
+              <div className="h-px w-20 md:w-24 bg-primary"></div>
             </div>
 
-            <div className="flex flex-col gap-10">
-              <div className="flex items-center gap-6 group">
-                  <div className="w-12 h-12 flex items-center justify-center border border-border group-hover:border-white/30 transition-colors">
-                    <Mail size={18} strokeWidth={1.5} className="text-muted-foreground group-hover:text-white transition-colors" />
+            <div className="flex flex-col gap-8 md:gap-10">
+              <div className="flex items-center gap-4 md:gap-6 group">
+                  <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center border border-border group-hover:border-white/30 transition-colors">
+<Mail size={18} strokeWidth={1.5} className="text-muted-foreground group-hover:text-white transition-colors" />
                   </div>
                   <div className="flex flex-col gap-1">
                     <span className="mono-label text-[8px]">Direct Channel</span>
-                    <a href="mailto:shakayet.dev@gmail.com" className="text-lg font-medium hover:text-primary transition-colors">shakayet.dev@gmail.com</a>
+                    <a href="mailto:shakayet.dev@gmail.com" className="text-base md:text-lg font-medium hover:text-primary transition-colors break-all">shakayet.dev@gmail.com</a>
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-6 group">
-                  <div className="w-12 h-12 flex items-center justify-center border border-border group-hover:border-white/30 transition-colors">
-                    <MapPin size={18} strokeWidth={1.5} className="text-muted-foreground group-hover:text-white transition-colors" />
+                <div className="flex items-center gap-4 md:gap-6 group">
+                  <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center border border-border group-hover:border-white/30 transition-colors">
+<MapPin size={18} strokeWidth={1.5} className="text-muted-foreground group-hover:text-white transition-colors" />
                   </div>
                   <div className="flex flex-col gap-1">
                     <span className="mono-label text-[8px]">Location</span>
-                    <span className="text-lg font-medium">Dhaka, Bangladesh</span>
+                    <span className="text-base md:text-lg font-medium">Dhaka, Bangladesh</span>
                   </div>
                 </div>
             </div>
 
-            <div className="mt-auto p-8 border border-border bg-white/[0.01] flex items-center gap-4">
-              <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
-              <span className="mono-label">Available for immediate deployment</span>
+            <div className="mt-8 md:mt-auto p-6 md:p-8 border border-border bg-white/[0.01] flex items-center gap-4 rounded-xl md:rounded-none">
+              <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-primary animate-pulse"></div>
+              <span className="mono-label text-[8px] md:text-[10px]">Available for immediate deployment</span>
             </div>
           </div>
 
           {/* Form Side */}
           <div className="lg:col-span-7">
-            <form onSubmit={handleSubmit} className="flex flex-col gap-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-8 md:gap-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                 <div className="flex flex-col gap-4">
                   <label htmlFor="name" className="mono-label">Identity</label>
                   <Input 

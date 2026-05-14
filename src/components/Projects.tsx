@@ -67,20 +67,20 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <section id="projects" className="py-24 px-6 md:px-12 lg:px-24 border-t border-border">
+    <section id="projects" className="py-24 px-6 md:px-12 lg:px-24 border-t border-border overflow-hidden">
       <div className="max-w-screen-2xl mx-auto">
         <div className="section-heading">04 / Selected Works</div>
         
-        <div className="flex flex-col md:flex-row justify-between items-start mb-24 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-start mb-16 md:mb-24 gap-8">
           <div className="max-w-2xl">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-              Engineering solutions for <br />
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-6">
+              Engineering solutions for <br className="hidden sm:block" />
               <span className="text-gradient italic font-serif">complex</span> commerce.
             </h2>
           </div>
         </div>
         
-        <div className="grid grid-cols-1 gap-40">
+        <div className="grid grid-cols-1 gap-24 md:gap-40">
           {projectList.map((project, index) => (
             <div key={index} className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start group">
               {/* Info Side */}
@@ -90,11 +90,11 @@ const Projects: React.FC = () => {
                     <span className="mono-label text-primary font-bold">{project.category}</span>
                     <span className="text-[10px] text-muted-foreground opacity-50">/ 0{index + 1}</span>
                   </div>
-                  <h3 className="text-4xl md:text-6xl font-bold tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-secondary transition-all duration-500">
+                  <h3 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-secondary transition-all duration-500">
                     {project.title}
                   </h3>
                   
-                  <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.05] border-l-primary/50 border-l-2">
+                  <div className="p-5 md:p-6 rounded-2xl bg-white/[0.02] border border-white/[0.05] border-l-primary/50 border-l-2">
                      <p className="text-sm md:text-base text-muted-foreground leading-relaxed font-light">
                       {project.description}
                     </p>
@@ -117,7 +117,7 @@ const Projects: React.FC = () => {
                   <div className="grid grid-cols-1 gap-3">
                     {project.architecture.map((item, aIdx) => (
                       <div key={aIdx} className="flex gap-4 p-4 rounded-xl border border-white/[0.05] hover:border-white/20 hover:bg-white/[0.02] transition-all duration-300">
-                        <div className="mt-1">
+                        <div className="mt-1 shrink-0">
                           <Server size={14} className="text-secondary opacity-70" />
                         </div>
                         <p className="text-xs md:text-sm text-muted-foreground font-light leading-relaxed">
@@ -128,20 +128,20 @@ const Projects: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-x-4 gap-y-2">
+                <div className="flex flex-wrap gap-x-3 md:gap-x-4 gap-y-2">
                   {project.techStack.map((tech) => (
-                    <span key={tech} className="px-3 py-1 text-[10px] uppercase tracking-widest text-muted-foreground bg-white/[0.03] border border-white/[0.05] rounded-full">
+                    <span key={tech} className="px-3 py-1 text-[9px] md:text-[10px] uppercase tracking-widest text-muted-foreground bg-white/[0.03] border border-white/[0.05] rounded-full">
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex items-center gap-6 pt-4">
+                <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-6 pt-4">
                   <a 
                     href={project.github} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 px-6 py-3 rounded-xl bg-white/[0.05] border border-white/[0.1] text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-white hover:text-black transition-all group/btn"
+                    className="flex items-center justify-center gap-3 px-6 py-3 rounded-xl bg-white/[0.05] border border-white/[0.1] text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-white hover:text-black transition-all group/btn w-full sm:w-auto"
                   >
                     <FaGithub size={16} /> 
                     <span>Codebase</span>
@@ -151,7 +151,7 @@ const Projects: React.FC = () => {
                     href={project.live} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 px-6 py-3 rounded-xl bg-primary text-primary-foreground text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-white hover:text-black transition-all shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-none"
+                    className="flex items-center justify-center gap-3 px-6 py-3 rounded-xl bg-primary text-primary-foreground text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-white hover:text-black transition-all shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-none w-full sm:w-auto"
                   >
                     <ExternalLink size={16} /> 
                     <span>Deployment</span>
@@ -175,7 +175,7 @@ const Projects: React.FC = () => {
                 
                 {/* Custom Cursor Overlay for Project */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/img:opacity-100 transition-opacity duration-500">
-                  <div className="w-24 h-24 rounded-full bg-white text-black flex items-center justify-center text-[10px] uppercase font-bold tracking-widest scale-50 group-hover/img:scale-100 transition-transform duration-500 shadow-2xl">
+                  <div className="w-16 h-16 md:w-24 md:h-24 rounded-full bg-white text-black flex items-center justify-center text-[9px] md:text-[10px] uppercase font-bold tracking-widest scale-50 group-hover/img:scale-100 transition-transform duration-500 shadow-2xl">
                     View
                   </div>
                 </div>

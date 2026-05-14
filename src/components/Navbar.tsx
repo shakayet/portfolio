@@ -26,9 +26,9 @@ const Navbar: React.FC = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed top-8 left-0 w-full z-50 px-6"
+      className="fixed top-4 md:top-8 left-0 w-full z-50 px-4 md:px-6"
     >
-      <div className={`container mx-auto max-w-5xl glass-island transition-all duration-700 ${scrolled ? 'py-3 px-8' : 'py-5 px-10'}`}>
+      <div className={`container mx-auto max-w-5xl glass-island transition-all duration-700 ${scrolled ? 'py-3 px-6 md:px-8' : 'py-4 md:py-5 px-6 md:px-10'}`}>
         <div className="flex justify-between items-center">
           <a href="#hero" className="text-xl font-medium tracking-tighter text-white group flex items-center gap-4">
             <div className="relative w-8 h-8 flex items-center justify-center border border-white/20 group-hover:border-primary transition-colors duration-500">

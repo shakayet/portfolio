@@ -19,22 +19,22 @@ const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="py-24 px-6 md:px-12 lg:px-24 border-t border-border">
+    <section id="about" className="py-24 px-6 md:px-12 lg:px-24 border-t border-border overflow-hidden">
       <div className="max-w-screen-2xl mx-auto">
         <div className="section-heading">01 / Background</div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
           {/* Narrative Content */}
-          <div className="lg:col-span-7 flex flex-col gap-12">
+          <div className="lg:col-span-7 flex flex-col gap-10 md:gap-12">
             <div className="flex flex-col gap-6">
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-                Building systems that <br />
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
+                Building systems that <br className="hidden sm:block" />
                 <span className="text-gradient italic font-serif">endure</span> and scale.
               </h2>
-              <div className="h-px w-24 bg-primary"></div>
+              <div className="h-px w-20 md:w-24 bg-primary"></div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-sm md:text-base text-muted-foreground leading-relaxed font-light">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 text-sm md:text-base text-muted-foreground leading-relaxed font-light">
               <p>
                 I am a **Software Engineer** specialized in engineering scalable APIs, robust automation systems, and high-availability payment infrastructures. I transform complex business logic into high-performance, resilient systems that form the backbone of modern SaaS solutions.
               </p>
@@ -43,63 +43,63 @@ const About: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-border/50">
-              <div className="flex flex-col gap-2">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 pt-8 border-t border-border/50">
+              <div className="flex flex-col gap-1 md:gap-2">
                 <span className="mono-label">Experience</span>
-                <span className="text-xl font-medium">3+ Years</span>
+                <span className="text-lg md:text-xl font-medium">3+ Years</span>
               </div>
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-1 md:gap-2">
                 <span className="mono-label">Projects</span>
-                <span className="text-xl font-medium">15+ Finished</span>
+                <span className="text-lg md:text-xl font-medium">15+ Finished</span>
               </div>
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-1 md:gap-2">
                 <span className="mono-label">Focus</span>
-                <span className="text-xl font-medium">Backend</span>
+                <span className="text-lg md:text-xl font-medium">Backend</span>
               </div>
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-1 md:gap-2">
                 <span className="mono-label">Status</span>
-                <span className="text-xl font-medium text-primary">Available</span>
+                <span className="text-lg md:text-xl font-medium text-primary">Available</span>
               </div>
             </div>
           </div>
 
           {/* Visual/Tech Stack Side */}
-          <div className="lg:col-span-5 flex flex-col gap-12">
-            <div className="relative aspect-[4/5] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 border border-border group">
+          <div className="lg:col-span-5 flex flex-col gap-8 md:gap-12">
+            <div className="relative aspect-[4/5] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 border border-border group rounded-2xl">
               <img 
                 src="/profile.jpg" 
                 alt="Shakayet Hossain" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent">
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
                 <div className="flex flex-col gap-1">
                   <span className="mono-label text-white/70">Software Engineer</span>
-                  <span className="text-xl font-medium text-white uppercase tracking-wider">Shakayet Hossain</span>
+                  <span className="text-lg md:text-xl font-medium text-white uppercase tracking-wider">Shakayet Hossain</span>
                 </div>
               </div>
             </div>
 
-            <div className="p-8 border border-border/50 flex flex-col gap-8 bg-white/[0.01] rounded-2xl">
+            <div className="p-6 md:p-8 border border-border/50 flex flex-col gap-6 md:gap-8 bg-white/[0.01] rounded-2xl">
               <div className="flex justify-between items-center">
                 <span className="mono-label">Core Infrastructure Stack</span>
                 <Cpu size={14} className="text-muted-foreground" />
               </div>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2 md:gap-3">
                 {stack.map((item, idx) => (
                   <div 
                     key={idx} 
-                    className="group/item flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.05] hover:border-white/20 hover:-translate-y-1 transition-all duration-300"
+                    className="group/item flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2 md:py-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.05] hover:border-white/20 hover:-translate-y-1 transition-all duration-300"
                   >
                     <div 
                       className="flex items-center justify-center transition-colors duration-300"
                     >
                       <item.icon 
-                        size={18} 
+                        size={16} md:size={18} 
                         className="transition-transform duration-300 group-hover/item:scale-110" 
                         style={{ color: item.color }} 
                       />
                     </div>
-                    <span className="text-[10px] uppercase tracking-widest font-medium text-muted-foreground group-hover/item:text-white transition-colors duration-300">
+                    <span className="text-[9px] md:text-[10px] uppercase tracking-widest font-medium text-muted-foreground group-hover/item:text-white transition-colors duration-300">
                       {item.name}
                     </span>
                   </div>
