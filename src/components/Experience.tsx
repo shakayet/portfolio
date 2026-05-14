@@ -5,7 +5,7 @@ const Experience: React.FC = () => {
   return (
     <section id="experience" className="py-24 px-6 md:px-12 lg:px-24 border-t border-border">
       <div className="max-w-screen-2xl mx-auto">
-        <div className="section-heading">04 / Journey</div>
+        <div className="section-heading">05 / Journey</div>
         
         <div className="flex flex-col gap-24">
           {/* 1. Professional Experience - Full Width */}

@@ -36,10 +36,10 @@ const About: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-sm md:text-base text-muted-foreground leading-relaxed font-light">
               <p>
-                I am a software engineer dedicated to the art of backend engineering. I transform complex requirements into simple, scalable, and reliable systems that form the backbone of modern digital experiences.
+                I am a **Backend Engineer** specialized in engineering scalable APIs, robust automation systems, and high-availability payment infrastructures. I transform complex business logic into high-performance, resilient systems that form the backbone of modern SaaS solutions.
               </p>
               <p>
-                With a strong foundation in competitive programming (ICPC), I bring a rigorous approach to algorithm design and performance optimization, ensuring every line of code serves a purpose.
+                Leveraging a strong foundation in **competitive programming (ICPC)**, I focus on the intersection of algorithmic efficiency and production-grade reliability. My approach prioritizes clean architecture, automated testing, and comprehensive monitoring to ensure systems scale effortlessly under load.
               </p>
             </div>
 

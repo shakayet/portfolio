@@ -6,7 +6,7 @@ const Skills: React.FC = () => {
   return (
     <section id="skills" className="py-24 px-6 md:px-12 lg:px-24 border-t border-border">
       <div className="max-w-screen-2xl mx-auto">
-        <div className="section-heading">02 / Competencies</div>
+        <div className="section-heading">03 / Competencies</div>
         
         <div className="flex flex-col md:flex-row justify-between items-start mb-16 gap-8">
           <div className="max-w-2xl">

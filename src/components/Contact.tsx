@@ -55,7 +55,7 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="py-24 px-6 md:px-12 lg:px-24 border-t border-border">
       <div className="max-w-screen-2xl mx-auto">
-        <div className="section-heading">05 / Contact</div>
+        <div className="section-heading">07 / Contact</div>
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
           {/* Info Side */}
